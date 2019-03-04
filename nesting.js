@@ -50,8 +50,29 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater(){
+  for(let i = 0; i < employees.length; i++){
+    if(employees[i].firstName === `Theo`){
+      employees.splice(i, 1)
+    }else if(employees[i].firstName === `Lorie`){
+      employees[i].department = `HR`
+    }
+  }
+  return employees
+}
+// console.log(employeeUpdater())
 
+// function employeeUpdater(){
+//   employees.forEach((element, index, array) => {
+//     if(element.firstName === `Theo`){
+//       employees.splice(element, 1)
+//     } else if(element.firstName === `Lorie`){
+//       employees.department = 'HR'
+//     }
+//   });
+//   return employees
+// }
+// console.log(employeeUpdater())
 
 
 ////////// PROBLEM 2 //////////
@@ -68,8 +89,19 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
-
+function removeDuplicates(array){
+  newArray=[];
+  for (var i=0; i<array.length; i++){
+    for (var j=1; j<array.length; j++){
+      if(array[i]===array[j]){
+        array.splice(i,1)
+        newArray.push(i);
+      }
+    }
+  }
+  return newArray;//Code Here
+}
+console.log(removeDuplicates(workplaceAccidents))
 
 
 ////////// PROBLEM 3 //////////
